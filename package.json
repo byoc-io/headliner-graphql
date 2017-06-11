@@ -1,0 +1,69 @@
+{
+  "name": "headliner-graphql",
+  "version": "1.0.0-alpha",
+  "description": "Headliner GraphQL Server",
+  "author": "Daniel Negri <danielgomesnegri@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "Apollo",
+    "Blog",
+    "CMS",
+    "GraphQL",
+    "Newspaper",
+    "Headliner"
+  ],
+  "bugs": {
+    "bugs": "https://github.com/byoc-io/headliner-api/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/byoc-io/headliner-api.git"
+  },
+  "scripts": {
+    "dev": "nodemon src/server.js --exec babel-node",
+    "start": "babel-node src/server.js",
+    "test": "mocha --compilers js:babel-core/register --reporter spec --full-trace test/*.test.js && npm run lint",
+    "integration": "mocha --compilers js:babel-core/register test/**/*.js --timeout 5000 --reporter spec --ui bdd",
+    "coverage": "nyc --require babel-register --require babel-polyfill ./node_modules/.bin/mocha --timeout 5000 --recursive",
+    "lint": "./node_modules/.bin/eslint .",
+    "build": "./node_modules/.bin/babel src -d dist --presets es2015,stage-2"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.49.0",
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.1",
+    "dataloader": "^1.2.0",
+    "elasticsearch": "^13.0.1",
+    "everyconfig": "^1.0.2",
+    "express": "^4.14.0",
+    "graphql": "^0.7.2",
+    "graphql-server-express": "^0.4.1",
+    "graphql-tools": "^0.8.4",
+    "lodash": "^4.16.5",
+    "morgan": "^1.7.0",
+    "request": "^2.79.0",
+    "request-promise": "^4.1.1",
+    "sha1": "^1.1.1",
+    "winston": "^2.3.1",
+    "yargs": "^6.5.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-eslint": "^7.1.1",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-stage-2": "^6.17.0",
+    "chai": "^3.5.0",
+    "eslint": "^3.12.1",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.8.0",
+    "lodash": "^4.11.1",
+    "mocha": "^3.2.0",
+    "nock": "^9.0.2",
+    "nodemon": "^1.11.0",
+    "nyc": "^10.0.0",
+    "supertest": "^2.0.1",
+    "uuid": "^3.0.1"
+  }
+}

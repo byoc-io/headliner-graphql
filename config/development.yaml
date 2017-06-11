@@ -1,0 +1,12 @@
+---
+server:
+  uri: localhost:3000
+services:
+  es:
+    host: http://localhost:9200
+    logLevel: debug
+logging:
+  stdout:
+    enabled: true
+    level: debug
+env: dev

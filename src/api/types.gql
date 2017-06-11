@@ -1,0 +1,101 @@
+type KeyValue {
+  id: ID!
+  key: String!
+  value: String!
+}
+
+enum POST_TYPE {
+  article
+  attachment
+  revision
+  page
+}
+
+type Post {
+  id: ID!
+  title: String!
+  slug: String
+  content: String
+  featured: Boolean
+
+  categories: [Term]
+  tags: [Term]
+  parent: Post
+  postType: POST_TYPE
+  mimeType: String
+
+  status: String
+  language: String
+
+  visibility: String
+  metadata: [KeyValue]
+  author: User
+
+  publishedAt: String
+  publishedBy: User
+
+  createdAt: String
+  createdBy: User
+
+  updatedAt: String
+  updatedBy: User
+}
+
+type Role {
+  id: ID!
+  name: String!
+  description: String
+  user: User!
+
+  createdAt: String
+  createdBy: User
+
+  updatedAt: String
+  updatedBy: User
+}
+
+enum TERM_TAXONOMY {
+  category
+  menu
+  post_format
+  post_status
+  post_tag
+}
+
+type Term {
+  id: ID!
+  name: String!
+  slug: String!
+  taxonomy: TERM_TAXONOMY
+  parent: String
+}
+
+type User {
+  id: ID!
+  name: String!
+  slug: String
+  accessToken: String
+  password: String
+  email: String
+  image: String
+  cover: String
+  bio: String
+  website: String
+  location: String
+  facebook: String
+  twitter: String
+  accessibility: String
+  status: String
+  language: String
+  tour: Boolean
+  Roles: [Role]
+
+  lastLogin: String
+
+  createdAt: String
+  createdBy: User
+
+  updatedAt: String
+  updatedBy: User
+}
+

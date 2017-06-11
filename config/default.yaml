@@ -1,0 +1,21 @@
+---
+server:
+  uri: "localhost:3000"
+services:
+  es:
+    region: us-east-1
+    host: http://byoc-es.us-east-1.es.amazonaws.com
+    version: '5.x'
+    logLevel: info
+    from: 0
+    size: 10
+detailedErrors: true
+logging:
+  raygun:
+    enabled: false
+  stdout:
+    enabled: false
+    level: debug
+cacheTTL: 600
+port: 3000
+env: dev
